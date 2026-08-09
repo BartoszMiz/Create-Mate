@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:smelting",
+	"category": "misc",
+	"cookingtime": 200,
+	"experience": 0.1,
+	"ingredient": {
+		"item": "create_mate:yerba_leaves"
+	},
+	"result": {
+		"id": "create_mate:dried_yerba_leaves"
+	}
+}
