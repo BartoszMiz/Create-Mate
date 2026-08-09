@@ -9,7 +9,6 @@ import com.mojang.logging.LogUtils;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
@@ -37,9 +36,6 @@ public class CreateMate {
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
-
-        // Register our mod's ModConfigSpec so that FML can create and load the config file for us
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
@@ -48,10 +44,19 @@ public class CreateMate {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() != CreativeModeTabs.FOOD_AND_DRINKS) return;
+        if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
+            event.accept(ModItems.CLUB_MATE_BOTTLE);
+            event.accept(ModItems.TSCHUNK_BOTTLE);
+        }
 
-        event.accept(ModItems.CLUB_MATE_BOTTLE);
-        event.accept(ModItems.TSCHUNK_BOTTLE);
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.YERBA_LEAVES);
+            event.accept(ModItems.DRIED_YERBA_LEAVES);
+        }
+
+        if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+            event.accept(ModItems.YERBA_SAPLING);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

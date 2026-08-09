@@ -37,6 +37,18 @@ public abstract class ModItems {
                 }
             });
 
+    public static final DeferredItem<Item> YERBA_SAPLING = ITEMS.register("yerba_sapling",
+            () -> new Item(new Item.Properties())
+    );
+
+    public static final DeferredItem<Item> YERBA_LEAVES = ITEMS.register("yerba_leaves",
+            () -> new Item(new Item.Properties())
+    );
+
+    public static final DeferredItem<Item> DRIED_YERBA_LEAVES = ITEMS.register("dried_yerba_leaves",
+            () -> new Item(new Item.Properties())
+    );
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
