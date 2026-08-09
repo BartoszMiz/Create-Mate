@@ -1,5 +1,7 @@
 package net.uwulabs.createmate;
 
+import net.minecraft.world.item.CreativeModeTabs;
+import net.uwulabs.createmate.item.ModItems;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -31,6 +33,7 @@ public class CreateMate {
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
+        ModItems.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -45,7 +48,10 @@ public class CreateMate {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() != CreativeModeTabs.FOOD_AND_DRINKS) return;
 
+        event.accept(ModItems.CLUB_MATE_BOTTLE);
+        event.accept(ModItems.TSCHUNK_BOTTLE);
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
