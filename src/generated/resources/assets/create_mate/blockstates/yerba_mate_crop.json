@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "create_mate:block/yerba_mate_crop_stage0"
+    },
+    "age=1": {
+      "model": "create_mate:block/yerba_mate_crop_stage1"
+    },
+    "age=2": {
+      "model": "create_mate:block/yerba_mate_crop_stage2"
+    }
+  }
+}

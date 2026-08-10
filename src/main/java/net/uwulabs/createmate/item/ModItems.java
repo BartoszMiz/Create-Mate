@@ -1,12 +1,14 @@
 package net.uwulabs.createmate.item;
 
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.uwulabs.createmate.CreateMate;
+import net.uwulabs.createmate.block.ModBlocks;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class ModItems {
@@ -38,7 +40,7 @@ public abstract class ModItems {
             });
 
     public static final DeferredItem<Item> YERBA_SAPLING = ITEMS.register("yerba_sapling",
-            () -> new Item(new Item.Properties())
+            () -> new ItemNameBlockItem(ModBlocks.YERBA_MATE_CROP.get(), new Item.Properties())
     );
 
     public static final DeferredItem<Item> YERBA_LEAVES = ITEMS.register("yerba_leaves",

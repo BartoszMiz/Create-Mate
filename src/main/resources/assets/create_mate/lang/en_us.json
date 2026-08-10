@@ -3,5 +3,7 @@
 	"item.create_mate.tschunk_bottle": "Tschunk",
 	"item.create_mate.yerba_sapling": "Yerba Sapling",
 	"item.create_mate.yerba_leaves": "Yerba Leaves",
-	"item.create_mate.dried_yerba_leaves": "Dried Yerba Leaves"
+	"item.create_mate.dried_yerba_leaves": "Dried Yerba Leaves",
+
+	"block.create_mate.yerba_mate_crop": "Yerba Mate Crop"
 }
