@@ -5,5 +5,8 @@
 	"item.create_mate.yerba_leaves": "Yerba Leaves",
 	"item.create_mate.dried_yerba_leaves": "Dried Yerba Leaves",
 
-	"block.create_mate.yerba_mate_crop": "Yerba Mate Crop"
+	"block.create_mate.yerba_mate_crop": "Yerba Mate Crop",
+
+	"fluid.create_mate.mate_extract": "Mate Extract",
+	"fluid.create_mate.club_mate": "Club-Mate"
 }
