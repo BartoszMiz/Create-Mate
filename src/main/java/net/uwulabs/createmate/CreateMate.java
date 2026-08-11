@@ -1,6 +1,12 @@
 package net.uwulabs.createmate;
 
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.capability.IFluidHandlerItem;
 import net.uwulabs.createmate.block.ModBlocks;
 import net.uwulabs.createmate.fluid.ModFluids;
 import net.uwulabs.createmate.item.ModItems;
@@ -51,6 +57,7 @@ public class CreateMate {
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(ModItems.CLUB_MATE_BOTTLE);
             event.accept(ModItems.TSCHUNK_BOTTLE);
+            event.accept(ModItems.MATE_EXTRACT_BOTTLE);
         }
 
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
@@ -69,4 +76,5 @@ public class CreateMate {
         // Do something when the server starts
         LOGGER.info("HELLO from server starting");
     }
+
 }

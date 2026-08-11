@@ -18,5 +18,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.YERBA_SAPLING.get());
         basicItem(ModItems.YERBA_LEAVES.get());
         basicItem(ModItems.DRIED_YERBA_LEAVES.get());
+        basicItem(ModItems.MATE_EXTRACT_BOTTLE.get());
     }
 }

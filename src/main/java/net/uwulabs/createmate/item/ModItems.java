@@ -18,7 +18,7 @@ public abstract class ModItems {
             () -> new Item(
                     new Item.Properties()
                             .food(ModFoodProperties.CLUB_MATE_BOTTLE)
-                            .stacksTo(1)
+                            .stacksTo(16)
             ) {
                 @Override
                 public @NotNull UseAnim getUseAnimation(@NotNull ItemStack stack) {
@@ -44,11 +44,23 @@ public abstract class ModItems {
     );
 
     public static final DeferredItem<Item> YERBA_LEAVES = ITEMS.register("yerba_leaves",
-            () -> new Item(new Item.Properties())
+            () -> new Item(new Item.Properties().stacksTo(16))
     );
 
     public static final DeferredItem<Item> DRIED_YERBA_LEAVES = ITEMS.register("dried_yerba_leaves",
             () -> new Item(new Item.Properties())
+    );
+
+    public static final DeferredItem<Item> MATE_EXTRACT_BOTTLE = ITEMS.register("mate_extract_bottle",
+            () -> new Item(new Item.Properties()
+                    .stacksTo(16)
+                    .food(ModFoodProperties.MATE_EXTRACT_BOTTLE)
+            ) {
+                @Override
+                public @NotNull UseAnim getUseAnimation(@NotNull ItemStack stack) {
+                    return UseAnim.DRINK;
+                }
+            }
     );
 
     public static void register(IEventBus eventBus) {

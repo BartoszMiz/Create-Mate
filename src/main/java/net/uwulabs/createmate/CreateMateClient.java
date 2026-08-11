@@ -8,11 +8,14 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.uwulabs.createmate.fluid.ModFluids;
+import net.uwulabs.createmate.item.ModItems;
 import org.jetbrains.annotations.NotNull;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
@@ -39,6 +42,15 @@ public class CreateMateClient {
         event.registerFluidType(createTintedWater(0xffcbcf04), ModFluids.MATE_EXTRACT_TYPE.get());
         event.registerFluidType(createTintedWater(0x80fbd905), ModFluids.CLUB_MATE_TYPE.get());
     }
+
+    @SubscribeEvent
+    public static void onRegisterItemColors(RegisterColorHandlersEvent.Item event) {
+        event.register(
+                (stack, tintIndex) -> tintIndex == 1 ? 0xffcbcf04 : -1,
+                ModItems.MATE_EXTRACT_BOTTLE.get()
+        );
+    }
+
 
     private static IClientFluidTypeExtensions createTintedWater(int tintColor) {
         return new IClientFluidTypeExtensions() {

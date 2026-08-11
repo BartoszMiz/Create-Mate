@@ -18,8 +18,16 @@ public abstract class ModFoodProperties {
             .nutrition(2)
             .saturationModifier(0.25f)
             .alwaysEdible()
-            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 5 *20, 1), 1.f)
+            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 5 * 20, 1), 1.f)
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 60 * 20, 1), 1.f)
+            .usingConvertsTo(Items.GLASS_BOTTLE)
+            .build();
+
+    public static final FoodProperties MATE_EXTRACT_BOTTLE = new FoodProperties.Builder()
+            .nutrition(2)
+            .saturationModifier(0.25f)
+            .alwaysEdible()
+            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 60 * 20, 1), 1.f)
             .usingConvertsTo(Items.GLASS_BOTTLE)
             .build();
 }
