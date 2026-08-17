@@ -1,6 +1,10 @@
 {
 	"item.create_mate.club_mate_bottle": "Club-Mate",
+	"item.create_mate.club_mate_bottle.tooltip": "Empowering hackers since 1924",
+
 	"item.create_mate.tschunk_bottle": "Tschunk",
+	"item.create_mate.tschunk_bottle.tooltip": "Tschunk tschunk tschunk sahur!",
+
 	"item.create_mate.yerba_sapling": "Yerba Sapling",
 	"item.create_mate.yerba_leaves": "Yerba Leaves",
 	"item.create_mate.dried_yerba_leaves": "Dried Yerba Leaves",

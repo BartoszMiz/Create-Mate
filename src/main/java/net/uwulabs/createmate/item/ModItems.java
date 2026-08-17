@@ -1,15 +1,19 @@
 package net.uwulabs.createmate.item;
 
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemNameBlockItem;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.UseAnim;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
+import net.minecraft.network.chat.TextColor;
+import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.uwulabs.createmate.CreateMate;
 import net.uwulabs.createmate.block.ModBlocks;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
+import java.util.Optional;
 
 public abstract class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(CreateMate.MOD_ID);
@@ -24,6 +28,19 @@ public abstract class ModItems {
                 public @NotNull UseAnim getUseAnimation(@NotNull ItemStack stack) {
                     return UseAnim.DRINK;
                 }
+
+                @Override
+                public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                    tooltipComponents.add(
+                            Component.translatable(getTooltipKey(CLUB_MATE_BOTTLE))
+                                    .setStyle(
+                                            Style.EMPTY
+                                                    .withItalic(true)
+                                                    .withColor(ChatFormatting.GRAY)
+                                    )
+                    );
+                }
             }
     );
 
@@ -36,6 +53,19 @@ public abstract class ModItems {
                 @Override
                 public @NotNull UseAnim getUseAnimation(@NotNull ItemStack stack) {
                     return UseAnim.DRINK;
+                }
+
+                @Override
+                public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                    tooltipComponents.add(
+                            Component.translatable(getTooltipKey(TSCHUNK_BOTTLE))
+                                    .setStyle(
+                                            Style.EMPTY
+                                                    .withItalic(true)
+                                                    .withColor(ChatFormatting.GRAY)
+                                    )
+                    );
                 }
             });
 
@@ -65,5 +95,9 @@ public abstract class ModItems {
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
+    }
+
+    private static String getTooltipKey(DeferredItem<Item> item) {
+        return "item." + item.getId().getNamespace() + "." + item.getId().getPath() + ".tooltip";
     }
 }
