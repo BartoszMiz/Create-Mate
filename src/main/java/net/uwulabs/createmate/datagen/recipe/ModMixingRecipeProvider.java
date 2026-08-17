@@ -18,15 +18,14 @@ public class ModMixingRecipeProvider extends MixingRecipeGen {
     }
 
     GeneratedRecipe
-
-    CLUB_MATE = create("club_mate", b -> b
-            .require(SizedFluidIngredient.of(ModFluids.CLUB_MATE.get(), 250))
-            // Apparently this doesn't work
+            CLUB_MATE = create(ModFluids.CLUB_MATE.getId().getPath(), b -> b
+                    .require(SizedFluidIngredient.of(ModFluids.MATE_EXTRACT.get(), 250))
+                    // Apparently this doesn't work
 //            .require(Ingredient.of(new ItemStack(Items.SUGAR, 2)))
-            // but this does
-            .require(Items.SUGAR)
-            .require(Items.SUGAR)
-            .output(ModFluids.CLUB_MATE.get(), 250)
+                    // but this does
+                    .require(Items.SUGAR)
+                    .require(Items.SUGAR)
+                    .output(ModFluids.CLUB_MATE.get(), 250)
     );
 }
 

@@ -10,7 +10,7 @@
     {
       "type": "neoforge:single",
       "amount": 250,
-      "fluid": "create_mate:club_mate"
+      "fluid": "create_mate:mate_extract"
     }
   ],
   "results": [

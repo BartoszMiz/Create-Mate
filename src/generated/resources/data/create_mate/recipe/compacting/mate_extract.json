@@ -1,0 +1,23 @@
+{
+  "type": "create:compacting",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "create_mate:dried_yerba_leaves"
+    },
+    {
+      "item": "create_mate:dried_yerba_leaves"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 250,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "results": [
+    {
+      "amount": 250,
+      "id": "create_mate:mate_extract"
+    }
+  ]
+}

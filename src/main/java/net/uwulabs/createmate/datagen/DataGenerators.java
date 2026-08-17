@@ -10,6 +10,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.uwulabs.createmate.CreateMate;
+import net.uwulabs.createmate.datagen.recipe.ModCompactingRecipeProvider;
 import net.uwulabs.createmate.datagen.recipe.ModFillingRecipeProvider;
 import net.uwulabs.createmate.datagen.recipe.ModMixingRecipeProvider;
 import net.uwulabs.createmate.datagen.recipe.ModRecipeProvider;
@@ -42,6 +43,7 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput, lookupProvider));
         generator.addProvider(event.includeServer(), new ModFillingRecipeProvider(packOutput, lookupProvider));
         generator.addProvider(event.includeServer(), new ModMixingRecipeProvider(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(), new ModCompactingRecipeProvider(packOutput, lookupProvider));
 
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));

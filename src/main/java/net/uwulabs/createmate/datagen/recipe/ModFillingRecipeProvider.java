@@ -18,7 +18,7 @@ public class ModFillingRecipeProvider extends FillingRecipeGen {
 
     GeneratedRecipe
 
-    CLUB_MATE_BOTTLE = create(getItemName(ModItems.CLUB_MATE_BOTTLE), b -> b
+            CLUB_MATE_BOTTLE = create(getItemName(ModItems.CLUB_MATE_BOTTLE), b -> b
             .require(SizedFluidIngredient.of(ModFluids.CLUB_MATE.get(), 250))
             .require(Items.GLASS_BOTTLE)
             .output(ModItems.CLUB_MATE_BOTTLE)
