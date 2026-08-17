@@ -1,0 +1,18 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 250,
+      "fluid": "create_mate:club_mate"
+    }
+  ],
+  "results": [
+    {
+      "id": "create_mate:club_mate_bottle"
+    }
+  ]
+}
