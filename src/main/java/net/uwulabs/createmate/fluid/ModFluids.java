@@ -41,6 +41,20 @@ public abstract class ModFluids {
             () -> new VirtualFluid(CLUB_MATE_TYPE)
     );
 
+    public static final DeferredHolder<FluidType, FluidType> TSCHUNK_TYPE = FLUID_TYPES.register("tschunk",
+            () -> new FluidType(
+                    FluidType.Properties.create()
+                            .descriptionId("fluid." + CreateMate.MOD_ID + ".tschunk")
+                            .density(1000)
+                            .viscosity(1000)
+                            .temperature(300)
+            )
+    );
+
+    public static final DeferredHolder<Fluid, Fluid> TSCHUNK = FLUIDS.register("tschunk",
+            () -> new VirtualFluid(TSCHUNK_TYPE)
+    );
+
     public static void register(IEventBus eventBus) {
         FLUID_TYPES.register(eventBus);
         FLUIDS.register(eventBus);

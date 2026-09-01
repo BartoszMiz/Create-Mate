@@ -26,6 +26,14 @@ public class ModMixingRecipeProvider extends MixingRecipeGen {
                     .require(Items.SUGAR)
                     .require(Items.SUGAR)
                     .output(ModFluids.CLUB_MATE.get(), 250)
-    );
+    ),
+            TSCHUNK = create(ModFluids.TSCHUNK.getId().getPath(), b -> b
+                    .require(SizedFluidIngredient.of(ModFluids.CLUB_MATE.get(), 1000))
+                    .require(Items.PACKED_ICE)
+                    .require(Items.PACKED_ICE)
+                    .require(Items.PACKED_ICE)
+                    .require(Items.PACKED_ICE)
+                    .output(ModFluids.TSCHUNK.get(), 1000)
+            );
 }
 

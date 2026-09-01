@@ -9,6 +9,12 @@
       "item": "create_mate:dried_yerba_leaves"
     },
     {
+      "item": "create_mate:dried_yerba_leaves"
+    },
+    {
+      "item": "create_mate:dried_yerba_leaves"
+    },
+    {
       "type": "neoforge:single",
       "amount": 250,
       "fluid": "minecraft:water"

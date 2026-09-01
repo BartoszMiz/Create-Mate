@@ -39,17 +39,18 @@ public class CreateMateClient {
 
     @SubscribeEvent
     public static void onRegisterFluidExtensions(RegisterClientExtensionsEvent event) {
-        event.registerFluidType(createTintedWater(0xffcbcf04), ModFluids.MATE_EXTRACT_TYPE.get());
-        event.registerFluidType(createTintedWater(0x80fbd905), ModFluids.CLUB_MATE_TYPE.get());
+        event.registerFluidType(createTintedWater(0xc8cbcf04), ModFluids.MATE_EXTRACT_TYPE.get());
+        event.registerFluidType(createTintedWater(0xc8f9d904), ModFluids.CLUB_MATE_TYPE.get());
+        event.registerFluidType(createTintedWater(0xc8ef8805), ModFluids.TSCHUNK_TYPE.get());
     }
 
-    @SubscribeEvent
-    public static void onRegisterItemColors(RegisterColorHandlersEvent.Item event) {
-        event.register(
-                (stack, tintIndex) -> tintIndex == 1 ? 0xffcbcf04 : -1,
-                ModItems.MATE_EXTRACT_BOTTLE.get()
-        );
-    }
+//    @SubscribeEvent
+//    public static void onRegisterItemColors(RegisterColorHandlersEvent.Item event) {
+//        event.register(
+//                (stack, tintIndex) -> tintIndex == 1 ? 0xffcbcf04 : -1,
+//                ModItems.MATE_EXTRACT_BOTTLE.get()
+//        );
+//    }
 
 
     private static IClientFluidTypeExtensions createTintedWater(int tintColor) {

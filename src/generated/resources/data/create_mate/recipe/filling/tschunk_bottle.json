@@ -1,0 +1,18 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 250,
+      "fluid": "create_mate:tschunk"
+    }
+  ],
+  "results": [
+    {
+      "id": "create_mate:tschunk_bottle"
+    }
+  ]
+}

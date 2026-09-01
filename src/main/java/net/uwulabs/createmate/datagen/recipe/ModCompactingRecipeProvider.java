@@ -21,6 +21,8 @@ public class ModCompactingRecipeProvider extends CompactingRecipeGen {
             .require(Fluids.WATER, 250)
             .require(ModItems.DRIED_YERBA_LEAVES)
             .require(ModItems.DRIED_YERBA_LEAVES)
+            .require(ModItems.DRIED_YERBA_LEAVES)
+            .require(ModItems.DRIED_YERBA_LEAVES)
             .requiresHeat(HeatCondition.HEATED)
             .output(ModFluids.MATE_EXTRACT.get(), 250)
     );

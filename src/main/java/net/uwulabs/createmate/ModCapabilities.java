@@ -72,5 +72,6 @@ public class ModCapabilities {
     public static void onRegisterCapabilities(RegisterCapabilitiesEvent event) {
         registerFluidHandler(event, ModItems.MATE_EXTRACT_BOTTLE, Items.GLASS_BOTTLE, ModFluids.MATE_EXTRACT.get(), 250);
         registerFluidHandler(event, ModItems.CLUB_MATE_BOTTLE, Items.GLASS_BOTTLE, ModFluids.CLUB_MATE.get(), 250);
+        registerFluidHandler(event, ModItems.TSCHUNK_BOTTLE, Items.GLASS_BOTTLE, ModFluids.TSCHUNK.get(), 250);
     }
 }

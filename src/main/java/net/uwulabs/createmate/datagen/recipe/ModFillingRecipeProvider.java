@@ -28,5 +28,11 @@ public class ModFillingRecipeProvider extends FillingRecipeGen {
             .require(SizedFluidIngredient.of(ModFluids.MATE_EXTRACT.get(), 250))
             .require(Items.GLASS_BOTTLE)
             .output(ModItems.MATE_EXTRACT_BOTTLE)
+    ),
+
+    TSCHUNK_BOTTLE = create(getItemName(ModItems.TSCHUNK_BOTTLE), b -> b
+            .require(SizedFluidIngredient.of(ModFluids.TSCHUNK.get(), 250))
+            .require(Items.GLASS_BOTTLE)
+            .output(ModItems.TSCHUNK_BOTTLE)
     );
 }
