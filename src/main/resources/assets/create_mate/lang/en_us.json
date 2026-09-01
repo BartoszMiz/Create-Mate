@@ -5,14 +5,14 @@
 	"item.create_mate.tschunk_bottle": "Tschunk",
 	"item.create_mate.tschunk_bottle.tooltip": "Tschunk tschunk tschunk sahur!",
 
-	"item.create_mate.yerba_sapling": "Yerba Sapling",
-	"item.create_mate.yerba_leaves": "Yerba Leaves",
-	"item.create_mate.dried_yerba_leaves": "Dried Yerba Leaves",
+	"item.create_mate.yerba_sapling": "Yerba sapling",
+	"item.create_mate.yerba_leaves": "Yerba leaves",
+	"item.create_mate.dried_yerba_leaves": "Dried yerba leaves",
 	"item.create_mate.mate_extract_bottle": "Yerba Mate",
 
-	"block.create_mate.yerba_mate_crop": "Yerba Mate Crop",
+	"block.create_mate.yerba_mate_crop": "Yerba mate crop",
 
-	"fluid.create_mate.mate_extract": "Mate Extract",
+	"fluid.create_mate.mate_extract": "Mate extract",
 	"fluid.create_mate.club_mate": "Club-Mate",
 	"fluid.create_mate.tschunk": "Tschunk"
 }

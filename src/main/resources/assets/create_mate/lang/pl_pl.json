@@ -1,0 +1,18 @@
+{
+	"item.create_mate.club_mate_bottle": "Club Mate",
+	"item.create_mate.club_mate_bottle.tooltip": "Energetyzuje osoby hakerskie od 1924 roku",
+
+	"item.create_mate.tschunk_bottle": "Tschunk",
+	"item.create_mate.tschunk_bottle.tooltip": "Tschunk tschunk tschunk sahur!",
+
+	"item.create_mate.yerba_sapling": "Sadzonka ostrokrzewu paragwajskiego",
+	"item.create_mate.yerba_leaves": "Liście ostrokrzewu paragwajskiego",
+	"item.create_mate.dried_yerba_leaves": "Suszone liście ostrokrzewu paragwajskiego",
+	"item.create_mate.mate_extract_bottle": "Yerba mate",
+
+	"block.create_mate.yerba_mate_crop": "Ostrokrzew paragwajski",
+
+	"fluid.create_mate.mate_extract": "Ekstrakt z mate",
+	"fluid.create_mate.club_mate": "Club Mate",
+	"fluid.create_mate.tschunk": "Tschunk"
+}
