@@ -3,8 +3,11 @@ package net.uwulabs.createmate.item;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
-import net.minecraft.network.chat.TextColor;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.stats.Stats;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.Level;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -13,7 +16,6 @@ import net.uwulabs.createmate.block.ModBlocks;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
-import java.util.Optional;
 
 public abstract class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(CreateMate.MOD_ID);
@@ -23,10 +25,21 @@ public abstract class ModItems {
                     new Item.Properties()
                             .food(ModFoodProperties.CLUB_MATE_BOTTLE)
                             .stacksTo(16)
+                            .rarity(Rarity.UNCOMMON)
             ) {
                 @Override
                 public @NotNull UseAnim getUseAnimation(@NotNull ItemStack stack) {
                     return UseAnim.DRINK;
+                }
+
+                @Override
+                public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity livingEntity) {
+                    // Make sure this is executed on the server side
+                    if (!level.isClientSide() && livingEntity instanceof ServerPlayer player) {
+                        player.getStats().setValue(player, Stats.CUSTOM.get(Stats.TIME_SINCE_REST), 0);
+                    }
+
+                    return super.finishUsingItem(stack, level, livingEntity);
                 }
 
                 @Override
@@ -49,6 +62,7 @@ public abstract class ModItems {
                     new Item.Properties()
                             .food(ModFoodProperties.TSCHUNK_BOTTLE)
                             .stacksTo(1)
+                            .rarity(Rarity.RARE)
             ) {
                 @Override
                 public @NotNull UseAnim getUseAnimation(@NotNull ItemStack stack) {
