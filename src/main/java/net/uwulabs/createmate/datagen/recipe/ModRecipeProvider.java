@@ -44,7 +44,7 @@ public class ModRecipeProvider extends RecipeProvider {
         SimpleCookingRecipeBuilder.campfireCooking(
                         Ingredient.of(ModItems.YERBA_LEAVES),
                         RecipeCategory.MISC,
-                        ModItems.DRIED_YERBA_LEAVES,
+//                        ModItems.DRIED_YERBA_LEAVES,
                         0.1f,
                         600
                 )
