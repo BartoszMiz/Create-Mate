@@ -18,6 +18,14 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
 
+      - name: Check mod version
+        run: |
+          MOD_VERSION="$(grep mod_version gradle.properties | cut -d '=' -f 2)"
+          if [ "${{ github.ref_name }}" != "v$MOD_VERSION" ]; then
+            echo "The mod version specified in gradle.properties ($MOD_VERSION) does not match the tag number ${{ github.ref_name }}"
+            exit 1
+          fi
+
       - name: Setup JDK 21
         uses: actions/setup-java@v4
         with:
