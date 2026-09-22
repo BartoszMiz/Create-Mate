@@ -21,7 +21,9 @@ jobs:
       - name: Check mod version
         run: |
           MOD_VERSION="$(grep mod_version gradle.properties | cut -d '=' -f 2)"
-          if [ "${{ github.ref_name }}" != "v$MOD_VERSION" ]; then
+          if [ "${{ github.ref_name }}" == "v$MOD_VERSION" ]; then
+            echo "The tag matches the mod version - good job!"
+          else
             echo "The mod version specified in gradle.properties ($MOD_VERSION) does not match the tag number ${{ github.ref_name }}"
             exit 1
           fi
@@ -34,6 +36,16 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
+
+      - name: Verify DataGen
+        run: |
+          ./gradlew runData
+          if git diff --quiet src/generated; then
+            echo "All DataGen is correctly commited!"
+          else
+            echo "The DataGen output does not match what is committed. Please run `./gradlew runData` locally and commit the results."
+            exit 1
+          fi
 
       - name: Build with Gradle
         run: ./gradlew build
