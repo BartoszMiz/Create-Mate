@@ -40,7 +40,7 @@ jobs:
           if git diff --quiet src/generated; then
             echo "All DataGen is correctly commited!"
           else
-            echo "The DataGen output does not match what is committed. Please run `./gradlew runData` locally and commit the results."
+            echo 'The DataGen output does not match what is committed. Please run `./gradlew runData` locally and commit the results.'
             exit 1
           fi
 
