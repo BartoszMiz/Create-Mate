@@ -1,4 +1,4 @@
-package net.uwulabs.createmate.datagen;
+package net.uwulabs.createmate.datagen.loot;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -8,8 +8,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
+import net.minecraft.world.level.storage.loot.providers.number.BinomialDistributionGenerator;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.uwulabs.createmate.CreateMate;
 import net.uwulabs.createmate.item.ModItems;
 
@@ -28,12 +31,10 @@ public class ModLootTableSubProvider implements LootTableSubProvider {
                 ),
                 LootTable.lootTable().withPool(
                         LootPool.lootPool()
-                                .setRolls(ConstantValue.exactly(1))
+                                .setRolls(BinomialDistributionGenerator.binomial(1, 0.5f))
                                 .add(
                                         LootItem.lootTableItem(ModItems.YERBA_SAPLING.get())
-                                                .when(
-                                                        LootItemRandomChanceCondition.randomChance(0.05f)
-                                                )
+                                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3)))
                                 )
                 )
         );

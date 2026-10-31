@@ -44,15 +44,6 @@ public class CreateMateClient {
         event.registerFluidType(createTintedWater(0xc8ef8805), ModFluids.TSCHUNK_TYPE.get());
     }
 
-//    @SubscribeEvent
-//    public static void onRegisterItemColors(RegisterColorHandlersEvent.Item event) {
-//        event.register(
-//                (stack, tintIndex) -> tintIndex == 1 ? 0xffcbcf04 : -1,
-//                ModItems.MATE_EXTRACT_BOTTLE.get()
-//        );
-//    }
-
-
     private static IClientFluidTypeExtensions createTintedWater(int tintColor) {
         return new IClientFluidTypeExtensions() {
             private static final ResourceLocation WATER_STILL = ResourceLocation.withDefaultNamespace("block/water_still");
