@@ -10,6 +10,8 @@
 	"item.create_mate.dried_yerba_leaves": "Suszone liście ostrokrzewu paragwajskiego",
 	"item.create_mate.mate_extract_bottle": "Yerba mate",
 
+	"item.create_mate.removes_phantoms_tooltip": "Wypicie tego napoju zapobiega nawiedzeniom przez fantomy - tak samo jak sen",
+
 	"block.create_mate.yerba_mate_crop": "Ostrokrzew paragwajski",
 
 	"fluid.create_mate.mate_extract": "Ekstrakt z mate",

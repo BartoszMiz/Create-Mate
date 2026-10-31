@@ -53,6 +53,14 @@ public abstract class ModItems {
                                                     .withColor(ChatFormatting.GRAY)
                                     )
                     );
+                    tooltipComponents.add(
+                            Component.translatable(REMOVES_PHANTOMS_TOOLTIP_KEY)
+                                    .setStyle(
+                                            Style.EMPTY
+                                                    .withBold(true)
+                                                    .withColor(ChatFormatting.GOLD)
+                                    )
+                    );
                 }
             }
     );
@@ -70,6 +78,16 @@ public abstract class ModItems {
                 }
 
                 @Override
+                public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity livingEntity) {
+                    // Make sure this is executed on the server side
+                    if (!level.isClientSide() && livingEntity instanceof ServerPlayer player) {
+                        player.getStats().setValue(player, Stats.CUSTOM.get(Stats.TIME_SINCE_REST), 0);
+                    }
+
+                    return super.finishUsingItem(stack, level, livingEntity);
+                }
+
+                @Override
                 public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, @NotNull List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                     tooltipComponents.add(
@@ -78,6 +96,13 @@ public abstract class ModItems {
                                             Style.EMPTY
                                                     .withItalic(true)
                                                     .withColor(ChatFormatting.GRAY)
+                                    )
+                    );
+                    tooltipComponents.add(
+                            Component.translatable(REMOVES_PHANTOMS_TOOLTIP_KEY)
+                                    .setStyle(
+                                            Style.EMPTY
+                                                    .withBold(true)
                                     )
                     );
                 }
@@ -114,4 +139,7 @@ public abstract class ModItems {
     private static String getTooltipKey(DeferredItem<Item> item) {
         return "item." + item.getId().getNamespace() + "." + item.getId().getPath() + ".tooltip";
     }
+
+    private static final String REMOVES_PHANTOMS_TOOLTIP_KEY =
+            "item." + CreateMate.MOD_ID + ".removes_phantoms_tooltip";
 }
